@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Homer</title>
+
+{% block body %}
+    <h1>Create new Homer</h1>
+
+    {{ include('homer/_form.html.twig') }}
+
+    <a href="{{ path('app_homer_index') }}">back to list</a>
+{% endblock %}

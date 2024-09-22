@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Homer</title>
+
+{% block body %}
+    <h1>Edit Homer</h1>
+
+    {{ include('homer/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_homer_index') }}">back to list</a>
+
+    {{ include('homer/_delete_form.html.twig') }}
+{% endblock %}

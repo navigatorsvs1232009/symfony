@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<title>Homer index</title>
+
+{% block body %}
+    <h1>Homer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>published</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for homer in homers %}
+            <tr>
+                <td>{{ homer.id }}</td>
+                <td>{{ homer.published ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_homer_show', {'id': homer.id}) }}">show</a>
+                    <a href="{{ path('app_homer_edit', {'id': homer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_homer_new') }}">Create new</a>
+{% endblock %}

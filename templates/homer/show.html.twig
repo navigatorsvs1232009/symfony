@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<title>Homer</title>
+
+{% block body %}
+    <h1>Homer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ homer.id }}</td>
+            </tr>
+            <tr>
+                <th>IsPublished</th>
+                <td>{{ homer.isPublished ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_homer_index') }}">back to list</a>
+
+    <a href="{{ path('app_homer_edit', {'id': homer.id}) }}">edit</a>
+
+    {{ include('homer/_delete_form.html.twig') }}
+{% endblock %}
