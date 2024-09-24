@@ -22,7 +22,7 @@ class SecurityController extends AbstractController
         return $this->render('admin/security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
-    #[Route(path: '/logout', name: 'admin_logout')]
+    #[Route(path: '/logout', name: 'admin_security_logout')]
     public function logout(): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         return $this->redirectToRoute('admin_security_login');
